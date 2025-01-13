@@ -1,5 +1,5 @@
 ## PIZZA DELIVERY BACKEND
-This is a REST API for a Pizza delivery service built for fun and learning with FastAPI, SQLAlchemy and PostgreSQL.
+This is a REST API for a Pizza delivery service built with FastAPI, SQLAlchemy and PostgreSQL.
 
 ## ROUTES TO IMPLEMENT
 | METHOD | ROUTE | FUNCTIONALITY |ACCESS|
@@ -30,5 +30,4 @@ engine=create_engine('postgresql://postgres:<username>:<password>@localhost/<db_
 ```
 
 - Create your database by running ``` python init_db.py ```
-- Finally run the API
-``` uvicorn main:app ``
+- Finally run the API ```uvicorn main:app ```
