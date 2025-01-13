@@ -7,3 +7,4 @@ click
 SQLAlchemy
 psycopg2_binary
 SQLAlchemy_utils
+colorama

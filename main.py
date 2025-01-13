@@ -16,9 +16,9 @@ def custom_openapi():
         return app.openapi_schema
 
     openapi_schema = get_openapi(
-        title = "Pizza Delivery API",
+        title = "Pizza Delivery BackEnd",
         version = "1.0",
-        description = "An API for a Pizza Delivery Service",
+        description = "An API Service for a Pizza Delivery Service",
         routes = app.routes,
     )
 
