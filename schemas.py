@@ -1,67 +1,65 @@
 from pydantic import BaseModel
 from typing import Optional
 from dotenv import load_dotenv
-load_dotenv()
 import os
 
-secret_key=os.getenv("JWT_SECRET")
+load_dotenv()
+
+secret_key = os.getenv("JWT_SECRET")
+
 class SignUpModel(BaseModel):
-    id:Optional[int]
-    username:str
-    email:str
-    password:str
-    is_staff:Optional[bool]
-    is_active:Optional[bool]
+    id: Optional[int]
+    username: str
+    email: str
+    password: str
+    is_staff: Optional[bool]
+    is_active: Optional[bool]
 
-
-    class Config:
-        orm_mode=True
-        schema_extra={
-            'example':{
-                "username":"johndoe",
-                "email":"johndoe@gmail.com",
-                "password":"password",
-                "is_staff":False,
-                "is_active":True
+    model_config = {
+        'from_attributes': True,
+        'json_schema_extra': {
+            'example': {
+                "username": "johndoe",
+                "email": "johndoe@gmail.com",
+                "password": "password",
+                "is_staff": False,
+                "is_active": True
             }
         }
-
+    }
 
 class Settings(BaseModel):
-    authjwt_secret_key:str=secret_key
-
+    authjwt_secret_key: str = secret_key
 
 class LoginModel(BaseModel):
-    username:str
-    password:str
-
-
+    username: str
+    password: str
 
 class OrderModel(BaseModel):
-    id:Optional[int]
-    quantity:int
-    order_status:Optional[str]="PENDING"
-    pizza_size:Optional[str]="SMALL"
-    user_id:Optional[int]
+    id: Optional[int]
+    quantity: int
+    order_status: Optional[str] = "PENDING"
+    pizza_size: Optional[str] = "SMALL"
+    user_id: Optional[int]
 
-
-    class Config:
-        orm_mode=True
-        schema_extra={
-            "example":{
-                "quantity":2,
-                "pizza_size":"LARGE"
+    model_config = {
+        'from_attributes': True,
+        'json_schema_extra': {
+            "example": {
+                "quantity": 2,
+                "pizza_size": "LARGE"
             }
         }
-
+    }
 
 class OrderStatusModel(BaseModel):
-    order_status:Optional[str]="PENDING"
+    order_status: Optional[str] = "PENDING"
 
-    class Config:
-        orm_mode=True
-        schema_extra={
-            "example":{
-                "order_status":"PENDING"
+    model_config = {
+        'from_attributes': True,
+        'json_schema_extra': {
+            "example": {
+                "order_status": "PENDING"
             }
         }
+    }
