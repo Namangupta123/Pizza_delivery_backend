@@ -22,12 +22,15 @@ This is a REST API for a Pizza delivery service built with FastAPI, SQLAlchemy a
 - Git clone the project with ``` git clone https://github.com/Namangupta123/Pizza_delivery_backend```
 - Install the requirements with ```pip install -r requirements.txt ```
 - Set Up your PostgreSQL database and set its URI in your ```database.py```
-
-```
-engine=create_engine('postgresql://postgres:<username>:<password>@localhost/<db_name>',
-    echo=True
-)
-```
-
 - Create your database by running ``` python init_db.py ```
 - Finally run the API ```uvicorn main:app ```
+
+## Contributing
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/improvement`)
+3. Make your changes
+4. Commit your changes (`git commit -am 'Add new feature'`)
+5. Push to the branch (`git push origin feature/improvement`)
+6. Create a Pull Request
