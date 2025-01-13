@@ -14,8 +14,6 @@ auth_router=APIRouter(
     tags=['auth']
 
 )
-
-
 session=Session(bind=engine)
 
 @auth_router.get('/')
@@ -53,8 +51,6 @@ async def signup(user:SignUpModel):
         ```
     
     """
-
-
     db_email=session.query(User).filter(User.email==user.email).first()
 
     if db_email is not None:
@@ -84,9 +80,6 @@ async def signup(user:SignUpModel):
     return new_user
 
 
-
-#login route
-
 @auth_router.post('/login',status_code=200)
 async def login(user:LoginModel,Authorize:AuthJWT=Depends()):
     """     
@@ -115,9 +108,6 @@ async def login(user:LoginModel,Authorize:AuthJWT=Depends()):
         detail="Invalid Username Or Password"
     )
 
-
-
-#refreshing tokens
 
 @auth_router.get('/refresh')
 async def refresh_token(Authorize:AuthJWT=Depends()):
