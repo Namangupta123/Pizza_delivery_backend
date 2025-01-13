@@ -4,7 +4,6 @@ pydantic
 typing-extensions
 asgiref
 click
-colorama
 SQLAlchemy
 psycopg2_binary
 SQLAlchemy_utils

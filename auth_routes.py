@@ -126,7 +126,6 @@ async def refresh_token(Authorize:AuthJWT=Depends()):
     This creates a fresh token. It requires an refresh token.
     """
 
-
     try:
         Authorize.jwt_refresh_token_required()
 

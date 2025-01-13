@@ -3,7 +3,6 @@ from sqlalchemy import Column,Integer,Boolean,Text,String,ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils.types import ChoiceType
 
-
 class User(Base):
     __tablename__='user'
     id=Column(Integer,primary_key=True)
@@ -17,7 +16,6 @@ class User(Base):
 
     def __repr__(self):
         return f"<User {self.username}"
-
 
 class Order(Base):
 
@@ -34,7 +32,6 @@ class Order(Base):
         ('LARGE','large'),
         ('EXTRA-LARGE','extra-large')
     )
-
 
     __tablename__='orders'
     id=Column(Integer,primary_key=True)

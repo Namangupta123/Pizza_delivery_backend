@@ -10,5 +10,4 @@ engine=create_engine(postgresURL,
 )
 
 Base=declarative_base()
-
 Session=sessionmaker()

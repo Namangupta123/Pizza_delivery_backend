@@ -11,7 +11,6 @@ order_router=APIRouter(
     tags=['orders']
 )
 
-
 session=Session(bind=engine)
 
 @order_router.get('/')
@@ -21,7 +20,6 @@ async def hello(Authorize:AuthJWT=Depends()):
         ## A sample hello world route
         This returns Hello world
     """
-
     try:
         Authorize.jwt_required()
 
@@ -39,11 +37,8 @@ async def place_an_order(order:OrderModel,Authorize:AuthJWT=Depends()):
         ## Placing an Order
         This requires the following
         - quantity : integer
-        - pizza_size: str
-    
+        - pizza_size: str 
     """
-
-
     try:
         Authorize.jwt_required()
 
@@ -80,15 +75,11 @@ async def place_an_order(order:OrderModel,Authorize:AuthJWT=Depends()):
     return jsonable_encoder(response)
 
 
-
-    
 @order_router.get('/orders')
 async def list_all_orders(Authorize:AuthJWT=Depends()):
     """
         ## List all orders
         This lists all  orders made. It can be accessed by superusers
-        
-    
     """
 
 
@@ -118,8 +109,6 @@ async def get_order_by_id(id:int,Authorize:AuthJWT=Depends()):
     """
         ## Get an order by its ID
         This gets an order by its ID and is only accessed by a superuser
-        
-
     """
 
 
@@ -275,7 +264,6 @@ async def update_order_status(id:int,
 
 @order_router.delete('/order/delete/{id}/',status_code=status.HTTP_204_NO_CONTENT)
 async def delete_an_order(id:int,Authorize:AuthJWT=Depends()):
-
     """
         ## Delete an Order
         This deletes an order by its ID
